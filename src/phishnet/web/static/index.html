@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PhishNet</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>PhishNet</h1>
+      <p class="privacy">Privacy-first: inputs are analyzed locally by heuristics and are not logged by default.</p>
+      <form id="analyze-form">
+        <label for="input-type">Input type</label>
+        <select id="input-type">
+          <option value="url">URL</option>
+          <option value="message">Message</option>
+        </select>
+        <label for="value">Paste URL or message</label>
+        <textarea id="value" rows="6" maxlength="4096" required></textarea>
+        <button type="submit">Analyze</button>
+      </form>
+      <section id="result" class="hidden"></section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
