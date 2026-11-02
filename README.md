@@ -17,7 +17,8 @@ PhishNet analyzes untrusted user-provided text and URLs for common phishing indi
 - Heuristic baseline can produce false positives/false negatives
 - It does not provide guaranteed phishing prevention or reputation verification
 - Optional ML training requires your own licensed dataset and is not enabled by default
-- The browser extension requires a running PhishNet API and currently targets Chromium Manifest V3
+
+The browser extension is optional. It connects to a running PhishNet API and supports Chromium-based browsers with Manifest V3; the API, CLI, and web dashboard work independently.
 
 ## Project structure
 - `src/phishnet/` — package source (API, service, features, schemas, CLI)
