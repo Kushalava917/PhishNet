@@ -1,0 +1,134 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  width: 340px;
+  margin: 0;
+  color: #172033;
+  background: #f5f7fb;
+}
+
+header {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  background: #173b73;
+}
+
+header img {
+  border-radius: 8px;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.1rem;
+}
+
+header p {
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+main {
+  padding: 1rem;
+}
+
+.status {
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.loading, .neutral {
+  color: #42526b;
+  background: #e8edf5;
+}
+
+.safe {
+  color: #12633b;
+  background: #dff5e8;
+}
+
+.suspicious {
+  color: #805400;
+  background: #fff0c2;
+}
+
+.phishing, .error {
+  color: #9c1c2b;
+  background: #ffe1e5;
+}
+
+.url {
+  margin: 0.75rem 0;
+  overflow: hidden;
+  color: #536176;
+  font-size: 0.75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#confidence, #summary {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+}
+
+#indicators {
+  max-height: 130px;
+  margin: 0.75rem 0 0;
+  padding-left: 1rem;
+  overflow-y: auto;
+  font-size: 0.78rem;
+}
+
+.error {
+  padding: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.actions {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.6rem;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  background: #1d5dcc;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button.secondary {
+  color: #1d5dcc;
+  background: transparent;
+  border: 1px solid #b8c5da;
+}
+
+footer {
+  padding: 0.7rem 1rem;
+  border-top: 1px solid #dfe5ef;
+  text-align: center;
+}
+
+footer a {
+  color: #1d5dcc;
+  font-size: 0.8rem;
+}

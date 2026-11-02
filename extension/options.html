@@ -1,11 +1,20 @@
 <!doctype html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PhishNet settings</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
   <body>
-    <h3>PhishNet Extension Options</h3>
-    <label>Analyze API endpoint</label>
-    <input id="api" value="http://localhost:8000/analyze" size="50" />
-    <button id="save">Save</button>
-    <p id="status"></p>
+    <main>
+      <h1>PhishNet settings</h1>
+      <p class="url">Configure the API endpoint used for local analysis.</p>
+      <label for="api">Analyze API endpoint</label>
+      <input id="api" type="url" value="http://localhost:8000/analyze" required />
+      <button id="save" type="button">Save settings</button>
+      <p id="status" role="status"></p>
+    </main>
     <script src="options.js"></script>
   </body>
 </html>

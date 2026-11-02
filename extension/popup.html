@@ -1,9 +1,34 @@
 <!doctype html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PhishNet</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
   <body>
-    <h3>PhishNet Warning</h3>
-    <p>This extension sends only the current tab URL to your configured API endpoint.</p>
-    <button id="report">Report incorrect result</button>
+    <header>
+      <img src="icon48.png" alt="" width="32" height="32" />
+      <div>
+        <h1>PhishNet</h1>
+        <p>Local phishing analysis</p>
+      </div>
+    </header>
+    <main>
+      <div id="status" class="status loading">Checking this page...</div>
+      <p id="url" class="url"></p>
+      <section id="details" hidden>
+        <p id="confidence"></p>
+        <p id="summary"></p>
+        <ul id="indicators"></ul>
+      </section>
+      <p id="error" class="error" hidden></p>
+      <div class="actions">
+        <button id="refresh" type="button">Check again</button>
+        <button id="report" type="button" class="secondary">Report incorrect result</button>
+      </div>
+    </main>
+    <footer><a href="options.html" target="_blank">Extension settings</a></footer>
     <script src="popup.js"></script>
   </body>
 </html>
