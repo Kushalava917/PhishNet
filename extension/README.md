@@ -1,5 +1,7 @@
 # PhishNet Browser Extension
 
+PhishNet's Chromium Manifest V3 extension provides page-level warnings backed by the local PhishNet API. It is designed to be transparent and privacy-conscious rather than silently blocking navigation.
+
 ## Privacy
 - Sends only the currently navigated URL to your configured PhishNet API endpoint.
 - Does **not** collect full browsing history.
@@ -13,9 +15,13 @@
 4. Click **Load unpacked** and select the `extension/` folder
 5. Open the extension popup, select **Extension settings**, and change the API endpoint if needed.
 
+Keep the API endpoint on a trusted local or private network. The extension sends the active page URL to that endpoint for analysis.
+
 ## Permissions
 - `webNavigation`, `tabs`, `notifications`, `storage`
 - Host access for `http://localhost:8000/*` and visited web URLs (needed to evaluate page URLs before navigation completes)
+
+The extension does not request content-script access, read page contents, or collect browsing history.
 
 ## Features
 - Analyzes the top-level page before navigation completes.

@@ -18,7 +18,11 @@ logger = logging.getLogger("phishnet")
 logger.setLevel(logging.INFO)
 
 config = load_config()
-app = FastAPI(title="PhishNet API", version="0.1.0")
+app = FastAPI(
+    title="PhishNet API",
+    description="Local, explainable phishing analysis for URLs and messages.",
+    version="0.1.0",
+)
 
 if config.cors_allow_origins:
     app.add_middleware(

@@ -1,4 +1,4 @@
-"""PhishNet package."""
+"""Open-source, explainable phishing detection toolkit."""
 
 from .service import analyze_input
 
