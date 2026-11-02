@@ -1,6 +1,6 @@
 # PhishNet Browser Extension
 
-PhishNet's Chromium Manifest V3 extension provides page-level warnings backed by the local PhishNet API. It is designed to be transparent and privacy-conscious rather than silently blocking navigation.
+PhishNet's Manifest V3 extension provides page-level warnings backed by the local PhishNet API. It is designed to be transparent and privacy-conscious rather than silently blocking navigation, and works with Chromium-based browsers such as Chrome, Edge, Brave, and Opera.
 
 ## Privacy
 - Sends only the currently navigated URL to your configured PhishNet API endpoint.
