@@ -3,6 +3,16 @@ const inputType = document.getElementById("input-type");
 const value = document.getElementById("value");
 const result = document.getElementById("result");
 
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[character]));
+}
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   result.className = "";
@@ -22,13 +32,15 @@ form.addEventListener("submit", async (event) => {
       return;
     }
 
-    const items = data.indicators.map((item) => `<li><strong>${item.name}</strong>: ${item.evidence}</li>`).join("");
+    const items = data.indicators
+      .map((item) => `<li><strong>${escapeHtml(item.name)}</strong>: ${escapeHtml(item.evidence)}</li>`)
+      .join("");
     result.className = data.classification;
     result.innerHTML = `
-      <h2>${data.classification.toUpperCase()}</h2>
-      <p>Confidence: ${data.confidence}</p>
-      <p>Model version: ${data.model_version}</p>
-      <p>${data.summary}</p>
+      <h2>${escapeHtml(data.classification.toUpperCase())}</h2>
+      <p>Confidence: ${escapeHtml(data.confidence)}</p>
+      <p>Model version: ${escapeHtml(data.model_version)}</p>
+      <p>${escapeHtml(data.summary)}</p>
       <ul>${items || "<li>No suspicious indicators detected.</li>"}</ul>
     `;
   } catch {

@@ -6,6 +6,17 @@ chrome.storage.local.get(["apiEndpoint"]).then(({ apiEndpoint }) => {
 });
 
 document.getElementById("save").addEventListener("click", async () => {
-  await chrome.storage.local.set({ apiEndpoint: input.value.trim() });
-  status.textContent = "Saved";
+  const endpoint = input.value.trim();
+  try {
+    const parsed = new URL(endpoint);
+    if (!["http:", "https:"].includes(parsed.protocol)) {
+      throw new Error("Unsupported protocol");
+    }
+    await chrome.storage.local.set({ apiEndpoint: endpoint });
+    status.className = "safe";
+    status.textContent = "Settings saved.";
+  } catch {
+    status.className = "error";
+    status.textContent = "Enter a valid HTTP or HTTPS endpoint.";
+  }
 });

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "phishnet"
 version = "0.1.0"
-description = "Privacy-conscious phishing detection toolkit for URLs and messages"
+description = "Open-source, explainable phishing detection toolkit for URLs and messages"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -35,6 +35,9 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+phishnet = ["web/static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
